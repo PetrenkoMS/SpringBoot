@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Result</h1>
+    <p th:text="'name: ' + ${people.name}" />
+    <p th:text="'age: ' + ${people.age}" />
+    <p th:text="'numberPassport: ' + ${people.numberPassport}" />
+    <a href="/registration">Submit another message</a>
+</body>
+</html>
