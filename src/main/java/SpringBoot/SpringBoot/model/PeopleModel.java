@@ -1,17 +1,19 @@
 package SpringBoot.SpringBoot.model;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import lombok.Data;
+
+import javax.persistence.*;
 
 @Entity
+@Data
+@Table(name  = "people_model")
 public class PeopleModel {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-
+    private String login;
+    private String password;
 
     private String name;
     private String secondName;
@@ -25,7 +27,10 @@ public class PeopleModel {
     public PeopleModel() {
     }
 
-    public PeopleModel(String name, String secondName, String gender, int age, int seriesPassport, int numberPassport, String telephone) {
+    public PeopleModel(int id, String login, String password, String name, String secondName, String gender, int age, int seriesPassport, int numberPassport, String telephone) {
+        this.id = id;
+        this.login = login;
+        this.password = password;
         this.name = name;
         this.secondName = secondName;
         this.gender = gender;
@@ -41,6 +46,22 @@ public class PeopleModel {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getName() {
